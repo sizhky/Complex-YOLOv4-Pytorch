@@ -49,13 +49,24 @@ The downloaded data includes:
 - Camera calibration matrices of object data set _**(16 MB)**_: for visualization of predictions
 - Left color images of object data set _**(12 GB)**_: for visualization of predictions
 
-Please make sure that you construct the source code & dataset directories structure as below.
+Explanation for each folder in the dataset can be found [here](https://github.com/bostondiditeam/kitti/blob/master/resources/devkit_object/readme.txt)
 
-For 3D point cloud preprocessing, please refer to the previous works:
-- [VoxelNet-Pytorch](https://github.com/skyhehe123/VoxelNet-pytorch)
-- [Complex-YOLOv2](https://github.com/AI-liu/Complex-YOLO)
-- [Complex-YOLOv3](https://github.com/ghimiredhikura/Complex-YOLOv3)
+Download the four folders, unzip the data and run the following to create folder softlinks (shortcuts) in the necessary locations for training/testing
 
+```bash
+$ pip install mayavi shapely
+$ cd data/kitti/training
+$ kitti_downloaded=/downloaded/location/
+ln -s $kitti_downloaded/data_object_label_2/training/label_2   label_2
+ln -s $kitti_downloaded/data_object_image_2/training/image_2   image_2
+ln -s $kitti_downloaded/data_object_velodyne/training/velodyne velodyne
+ln -s $kitti_downloaded/data_object_calib/training/calib       calib
+
+$ cd ../testing
+ln -s $kitti_downloaded/data_object_image_2/testing/image_2   image_2
+ln -s $kitti_downloaded/data_object_velodyne/testing/velodyne velodyne
+ln -s $kitti_downloaded/data_object_calib/testing/calib    c  alib
+```
 
 ### 2.3. Complex-YOLO architecture
 
