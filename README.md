@@ -65,7 +65,7 @@ ln -s $kitti_downloaded/data_object_calib/training/calib       calib
 $ cd ../testing
 ln -s $kitti_downloaded/data_object_image_2/testing/image_2   image_2
 ln -s $kitti_downloaded/data_object_velodyne/testing/velodyne velodyne
-ln -s $kitti_downloaded/data_object_calib/testing/calib    c  alib
+ln -s $kitti_downloaded/data_object_calib/testing/calib       calib
 ```
 
 ### 2.3. Complex-YOLO architecture
