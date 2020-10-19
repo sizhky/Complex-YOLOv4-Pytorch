@@ -3,7 +3,7 @@
 Download the data from [here](http://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d)
 
 Specifically we need the following information
-- Velodyne point clouds _**(29 GB)**_: [input data to the Complex-YOLO model](http://www.cvlibs.net/download.php?file=data_object_velodyne.zip)
+- Velodyne 3D point clouds _**(29 GB)**_: [input data to the Complex-YOLO model](http://www.cvlibs.net/download.php?file=data_object_velodyne.zip)
 - Training labels of object data set _**(5 MB)**_: [input label to the Complex-YOLO model](http://www.cvlibs.net/download.php?file=data_object_label_2.zip)
 - Camera calibration matrices of object data set _**(16 MB)**_: [for visualization of predictions](http://www.cvlibs.net/download.php?file=data_object_calib.zip)
 - Left color images of object data set _**(12 GB)**_: [for visualization of predictions](http://www.cvlibs.net/download.php?file=data_object_image_2.zip)
