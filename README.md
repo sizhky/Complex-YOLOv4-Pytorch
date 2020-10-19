@@ -29,7 +29,8 @@ ln -s $kitti_downloaded/data_object_calib/testing/calib       calib
 
 ## Visualize Training images
 ```bash
-python kitti_dataloader.py --output-width 608
+# cd Complex-YOLOv4-Pytorch/src/data_process
+$ python kitti_dataloader.py --output-width 608
 ```
 
 ## Train
@@ -40,6 +41,7 @@ $ python train.py --gpu_idx 0 --batch_size 2 --num_workers 4 --num_epochs 5
 
 ## Test
 ```bash
+$ cd Complex-YOLOv4-Pytorch/src
 $ python test.py --gpu_idx 0 --pretrained_path ../checkpoints/complexer_yolo/Model_complexer_yolo_epoch_5.pth --cfgfile ./config/cfg/complex_yolov4.cfg --show_image 
 ```
 
