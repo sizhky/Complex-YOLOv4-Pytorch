@@ -1,3 +1,48 @@
+# Training Instructions
+
+Download the data from [here](http://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d)
+
+Specifically we need the following information
+- Velodyne point clouds _**(29 GB)**_: [input data to the Complex-YOLO model](http://www.cvlibs.net/download.php?file=data_object_velodyne.zip)
+- Training labels of object data set _**(5 MB)**_: [input label to the Complex-YOLO model](http://www.cvlibs.net/download.php?file=data_object_label_2.zip)
+- Camera calibration matrices of object data set _**(16 MB)**_: [for visualization of predictions](http://www.cvlibs.net/download.php?file=data_object_calib.zip)
+- Left color images of object data set _**(12 GB)**_: [for visualization of predictions](http://www.cvlibs.net/download.php?file=data_object_image_2.zip)
+
+Explanation for each folder in the dataset can be found [here](https://github.com/bostondiditeam/kitti/blob/master/resources/devkit_object/readme.txt)
+
+Download the four files, unzip the data and run the following to create folder softlinks (shortcuts) in the necessary locations for training/testing
+
+```bash
+$ pip install mayavi shapely
+$ cd data/kitti/training
+$ kitti_downloaded=/downloaded/location/
+ln -s $kitti_downloaded/data_object_label_2/training/label_2   label_2
+ln -s $kitti_downloaded/data_object_image_2/training/image_2   image_2
+ln -s $kitti_downloaded/data_object_velodyne/training/velodyne velodyne
+ln -s $kitti_downloaded/data_object_calib/training/calib       calib
+
+$ cd ../testing
+ln -s $kitti_downloaded/data_object_image_2/testing/image_2   image_2
+ln -s $kitti_downloaded/data_object_velodyne/testing/velodyne velodyne
+ln -s $kitti_downloaded/data_object_calib/testing/calib       calib
+```
+
+## Visualize Training images
+```bash
+python kitti_dataloader.py --output-width 608
+```
+
+## Train
+```bash
+$ cd Complex-YOLOv4-Pytorch/src
+$ python train.py --gpu_idx 0 --batch_size 2 --num_workers 4 --num_epochs 5
+```
+
+## Test
+```bash
+$ python test.py --gpu_idx 0 --pretrained_path ../checkpoints/complexer_yolo/Model_complexer_yolo_epoch_5.pth --cfgfile ./config/cfg/complex_yolov4.cfg --show_image 
+```
+
 # Complex YOLOv4
 
 [![python-image]][python-url]
@@ -48,25 +93,6 @@ The downloaded data includes:
 - Training labels of object data set _**(5 MB)**_: input label to the Complex-YOLO model
 - Camera calibration matrices of object data set _**(16 MB)**_: for visualization of predictions
 - Left color images of object data set _**(12 GB)**_: for visualization of predictions
-
-Explanation for each folder in the dataset can be found [here](https://github.com/bostondiditeam/kitti/blob/master/resources/devkit_object/readme.txt)
-
-Download the four folders, unzip the data and run the following to create folder softlinks (shortcuts) in the necessary locations for training/testing
-
-```bash
-$ pip install mayavi shapely
-$ cd data/kitti/training
-$ kitti_downloaded=/downloaded/location/
-ln -s $kitti_downloaded/data_object_label_2/training/label_2   label_2
-ln -s $kitti_downloaded/data_object_image_2/training/image_2   image_2
-ln -s $kitti_downloaded/data_object_velodyne/training/velodyne velodyne
-ln -s $kitti_downloaded/data_object_calib/training/calib       calib
-
-$ cd ../testing
-ln -s $kitti_downloaded/data_object_image_2/testing/image_2   image_2
-ln -s $kitti_downloaded/data_object_velodyne/testing/velodyne velodyne
-ln -s $kitti_downloaded/data_object_calib/testing/calib       calib
-```
 
 ### 2.3. Complex-YOLO architecture
 
