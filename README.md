@@ -29,7 +29,7 @@ ln -s $kitti_downloaded/data_object_calib/testing/calib       calib
 
 ## Visualize Training images
 ```bash
-# cd Complex-YOLOv4-Pytorch/src/data_process
+$ cd Complex-YOLOv4-Pytorch/src/data_process
 $ python kitti_dataloader.py --output-width 608
 ```
 
