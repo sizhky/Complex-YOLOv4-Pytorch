@@ -3,10 +3,10 @@
 Download the data from [here](http://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d)
 
 Specifically we need the following information
-- Velodyne 3D point clouds _**(29 GB)**_: [input data to the Complex-YOLO model](http://www.cvlibs.net/download.php?file=data_object_velodyne.zip)
-- Training labels of object data set _**(5 MB)**_: [input label to the Complex-YOLO model](http://www.cvlibs.net/download.php?file=data_object_label_2.zip)
-- Camera calibration matrices of object data set _**(16 MB)**_: [for visualization of predictions](http://www.cvlibs.net/download.php?file=data_object_calib.zip)
-- Left color images of object data set _**(12 GB)**_: [for visualization of predictions](http://www.cvlibs.net/download.php?file=data_object_image_2.zip)
+- `velodyne` Velodyne 3D point clouds _**(29 GB)**_: [input data to the Complex-YOLO model](http://www.cvlibs.net/download.php?file=data_object_velodyne.zip)
+- `label_2` Training labels of object data set _**(5 MB)**_: [input label to the Complex-YOLO model](http://www.cvlibs.net/download.php?file=data_object_label_2.zip)
+- `calib` Camera calibration matrices of object data set _**(16 MB)**_: [for visualization of predictions](http://www.cvlibs.net/download.php?file=data_object_calib.zip)
+- `image_2` Left color images of object data set _**(12 GB)**_: [for visualization of predictions](http://www.cvlibs.net/download.php?file=data_object_image_2.zip)
 
 Explanation for each folder in the dataset can be found [here](https://github.com/bostondiditeam/kitti/blob/master/resources/devkit_object/readme.txt)
 
